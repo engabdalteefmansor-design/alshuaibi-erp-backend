@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: alshuaibi-erp-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/alshuaibi_erp
+    username: postgres
+    password: 12
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+logging:
+  level:
+    org.hibernate.SQL: info
+    org.springframework.security: DEBUG
+
+app:
+  jwt:
+    secret: "bXlfc3VwZXJfc2VjcmV0X2tleV9mb3JfYWxzaHVhaWJpX2VycF8yMDI2XzA3XzA5"
+    expiration-ms: 86400000
